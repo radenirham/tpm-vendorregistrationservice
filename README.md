@@ -1,1 +1,3 @@
-vendorregistrationservice
+# VendorRegistrationService
+
+## SonarQube Status : [![Quality Gate Status](https://sq.digital-healthcare.id/api/project_badges/measure?project=eprocurement-holding_third-party-management_vendorregistrationservice_AYoH7NCfApzcW47r4bHt&metric=alert_status&token=302379a27e699a3c30d8a8499dc737e8fc4c6f95)](https://sq.digital-healthcare.id/dashboard?id=eprocurement-holding_third-party-management_vendorregistrationservice_AYoH7NCfApzcW47r4bHt) [![Security Rating](https://sq.digital-healthcare.id/api/project_badges/measure?project=eprocurement-holding_third-party-management_vendorregistrationservice_AYoH7NCfApzcW47r4bHt&metric=security_rating&token=302379a27e699a3c30d8a8499dc737e8fc4c6f95)](https://sq.digital-healthcare.id/dashboard?id=eprocurement-holding_third-party-management_vendorregistrationservice_AYoH7NCfApzcW47r4bHt)
