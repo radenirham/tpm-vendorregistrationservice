@@ -90,47 +90,47 @@ class ApiController extends BaseController
                         $output_status = 403;
 
                     } else {
-                        if (!in_array($methodPath, $this->noTokenIdNeeded)) {
-                            if ($request->header('tokenId')) {
+                        // if (!in_array($methodPath, $this->noTokenIdNeeded)) {
+                        //     if ($request->header('tokenId')) {
 
-                                $decode = $request->header('tokenId');
-                                try {
-                                    $jwtData = (array)JWT::decode($decode, new Key(env('SERVICE_HASH'), 'HS256'));
-                                    if(count((array)$jwtData) > 0) {
-                                        $this->userdata->vendorUserId = $jwtData['vendor_user_id'];
-                                        $this->userdata->vendorUserUuid = $jwtData['vendor_user_uuid'];
-                                        $this->userdata->vendorUserName = $jwtData['vendor_user_name'];
-                                        $this->userdata->vendorUserPassword = $jwtData['vendor_user_password'];
-                                        $this->userdata->vendorUserFullname = $jwtData['vendor_user_fullname'];
-                                        $this->userdata->vendorUuid = $jwtData['vendor_uuid'];
-                                        $this->userdata->vendorCode = $jwtData['vendor_code'];
-                                        $this->userdata->vendorName = $jwtData['vendor_name'];
-                                        $this->userdata->vendorTaxNumber = $jwtData['vendor_tax_number'];
-                                        $this->userdata->vendorCompanyType = $jwtData['vendor_company_type'];
-                                        $this->userdata->vendorCompanyTypeName = $jwtData['vendor_company_type_name'];
-                                        $this->userdata->vendorArea = $jwtData['vendor_area'];
-                                        $this->userdata->vendorAreaName = $jwtData['vendor_area_name'];
-                                        $this->userdata->vendorCountryCode = $jwtData['vendor_country_code'];
-                                        $this->userdata->vendorCountryName = $jwtData['vendor_country_name'];
-                                        $this->userdata->vendorStatus = $jwtData['vendor_status'];
-                                        $this->userdata->vendorFilledStatus = $jwtData['vendor_filled_status'];
-                                    } else {
-                                        $isError = true;
-                                        $result_api['message'] = 'TokenId tidak sesuai';
-                                        $output_status = 403;
-                                    }
-                                } catch (\Throwable $th) {
-                                    $isError = true;
-                                    $result_api['message'] = 'TokenId tidak sesuai';
-                                    $output_status = 403;
-                                }
-                            } else {
-                                $isError = true;
-                                $result_api['message'] = 'TokenId harus dikirim';
-                                $output_status = 403;
-                            }
+                        //         $decode = $request->header('tokenId');
+                        //         try {
+                        //             $jwtData = (array)JWT::decode($decode, new Key(env('SERVICE_HASH'), 'HS256'));
+                        //             if(count((array)$jwtData) > 0) {
+                        //                 $this->userdata->vendorUserId = $jwtData['vendor_user_id'];
+                        //                 $this->userdata->vendorUserUuid = $jwtData['vendor_user_uuid'];
+                        //                 $this->userdata->vendorUserName = $jwtData['vendor_user_name'];
+                        //                 $this->userdata->vendorUserPassword = $jwtData['vendor_user_password'];
+                        //                 $this->userdata->vendorUserFullname = $jwtData['vendor_user_fullname'];
+                        //                 $this->userdata->vendorUuid = $jwtData['vendor_uuid'];
+                        //                 $this->userdata->vendorCode = $jwtData['vendor_code'];
+                        //                 $this->userdata->vendorName = $jwtData['vendor_name'];
+                        //                 $this->userdata->vendorTaxNumber = $jwtData['vendor_tax_number'];
+                        //                 $this->userdata->vendorCompanyType = $jwtData['vendor_company_type'];
+                        //                 $this->userdata->vendorCompanyTypeName = $jwtData['vendor_company_type_name'];
+                        //                 $this->userdata->vendorArea = $jwtData['vendor_area'];
+                        //                 $this->userdata->vendorAreaName = $jwtData['vendor_area_name'];
+                        //                 $this->userdata->vendorCountryCode = $jwtData['vendor_country_code'];
+                        //                 $this->userdata->vendorCountryName = $jwtData['vendor_country_name'];
+                        //                 $this->userdata->vendorStatus = $jwtData['vendor_status'];
+                        //                 $this->userdata->vendorFilledStatus = $jwtData['vendor_filled_status'];
+                        //             } else {
+                        //                 $isError = true;
+                        //                 $result_api['message'] = 'TokenId tidak sesuai';
+                        //                 $output_status = 403;
+                        //             }
+                        //         } catch (\Throwable $th) {
+                        //             $isError = true;
+                        //             $result_api['message'] = 'TokenId tidak sesuai';
+                        //             $output_status = 403;
+                        //         }
+                        //     } else {
+                        //         $isError = true;
+                        //         $result_api['message'] = 'TokenId harus dikirim';
+                        //         $output_status = 403;
+                        //     }
 
-                        }
+                        // }
 
                         $client = app('db')
                             ->table('sys_clients')

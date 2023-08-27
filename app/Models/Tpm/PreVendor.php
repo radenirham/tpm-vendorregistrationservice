@@ -26,8 +26,8 @@ class PreVendor extends BaseModel
     const CREATED_AT = 'pre_vendor_create_date';
 
     const OPTIONS_VENDOR_AREA = [
-        ['id' => 1, 'name' => 'Dalam Negeri'],
-        ['id' => 2, 'name' => 'Luar Negeri']
+        ['value' => 1, 'label' => 'Dalam Negeri'],
+        ['value' => 2, 'label' => 'Luar Negeri']
     ];
 
     public function saveModel(array $data)
